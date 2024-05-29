@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guard/auth.guard';
 import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
 
 const routes: Routes = [
   {
@@ -12,10 +13,12 @@ const routes: Routes = [
   },
   {
     path:'login',
-    loadChildren: () =>
-      import('src/app/views/login/login.component.module').then((m)=> m.LoginModule)
+    component:LoginComponent
   },
-
+  {
+    path:'register',
+    component:RegisterComponent
+  }
 ];
 
 @NgModule({
