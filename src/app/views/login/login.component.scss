@@ -2,17 +2,91 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.login-card{
-    border: 2px solid #313439;
-    border-radius: 10px;
-    width: 400px;
-    height: 400px;
+.login-container-left{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login-container-right{
+    background-color: #F8F0E3;
+    width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.login-card{
+    -webkit-box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.47);
+    -moz-box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.47);
+    box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.47);
+    background-color: white;
+    border-radius: 20px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.btnEntrar{
+    background-color: #313439;
+    color: white;
+    width: 400px;
+    height: 90px;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnInscrever{
+    background-color: #5E9359;
+    color: white;
+    width: 400px;
+    height: 90px;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.inputText{
+    width: 400px;
+    height: 90px;
+    border: gray 1px solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight:lighter;
+}
+
+.logo{
+    width: 300px;
+    margin-top: 50px;
+}
+
+hr{
+    width: 400px;
+}
+
+.app{
+    width: 500px;
+    height: 100px;
+    display: flex;
+    flex-direction: row-reverse;
 }

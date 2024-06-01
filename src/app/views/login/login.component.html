@@ -1,13 +1,18 @@
 <div class="login-page">
-    <div class="login-card">
-        <img src="assets/images/LogoCompleta.png">
-        
-        <input #inputLogin type="text" placeholder="Login">
-
-        <input #inputSenha type="text" placeholder="Senha">
-
-        <button (click)="Entrar()">Entrar</button>
-        <hr>
-        <button (click)="Inscrever()">Inscrever-se</button>
+    <div class="login-container-left">
+        <img src="assets/images/backgroundLogin.png">
+    </div>
+    <div class="login-container-right">
+        <img src="assets/images/LogoCompleta.png" class="logo">
+        <div class="login-card">
+            <input #inputLogin type="text" placeholder="Login" class="inputText">
+            <input #inputSenha type="text" placeholder="Senha" class="inputText">
+            <button (click)="Entrar()" class="btnEntrar">Entrar</button>
+            <hr>
+            <button (click)="Inscrever()" class="btnInscrever">Inscrever-se</button>
+        </div>
+        <div class="app">
+            <img src="assets/images/appandroid.png">
+        </div>
     </div>
 </div>

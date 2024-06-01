@@ -27,7 +27,7 @@ export class LoginComponent {
 
     if(user){
       this.userService.setUser(user);
-      this.router.navigate(['/home'])
+      this.router.navigate(['home'])
     }else{
 
       alert('n foi')

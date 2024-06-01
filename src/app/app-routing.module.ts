@@ -5,10 +5,10 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path:'',
-    loadChildren: () =>
-      import('src/app/views/home/home.component.module').then((m)=> m.HomeModule),
+    path:'home',
+    loadChildren: () =>import('src/app/views/home/home.component.module').then((m)=> m.HomeModule),
     canActivate:[AuthGuard]
   },
   {
