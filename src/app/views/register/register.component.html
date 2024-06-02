@@ -1,1 +1,16 @@
-<p>register works!</p>
+<div class="register-page">
+    <img src="assets/images/LogoCompleta.png">
+    <div class="register-card">
+            <h2 class="register-title">Cadastre-se</h2>
+            <hr>
+            <div class="register-inputs">
+                <input #inputNome type="text" placeholder="Nome" class="input-text">
+                <input #inputSobrenome type="text" placeholder="Sobrenome" class="input-text">
+                <input #inputTipo type="text" placeholder="Tipo de Usuário" class="input-text">
+                <input #inputEmail type="text" placeholder="E-mail" class="input-text">
+                <input #inputSenha type="text" placeholder="Senha" class="input-text">
+                <input #inputSenhaNovamente type="text" placeholder="Confirmar Senha" class="input-text">
+                <button class="btn-criar-conta" (click)="CriarConta()">Criar Conta</button>
+            </div>
+    </div>
+</div>

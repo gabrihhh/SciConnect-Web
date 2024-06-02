@@ -35,6 +35,6 @@ export class LoginComponent {
   }
 
   public Inscrever() {
-    this.router.navigate(['/register'])
+    this.router.navigate(['register'])
   }
 }
