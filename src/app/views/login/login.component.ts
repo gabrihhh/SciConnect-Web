@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service';
@@ -13,12 +13,20 @@ const listaUsuarioFake:IUser[] = [
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements AfterViewInit{
   @ViewChild('inputLogin') inputLogin!: ElementRef
   @ViewChild('inputSenha') inputSenha!: ElementRef
 
 
   constructor(private userService:UserService,private router:Router){}
+  
+  ngAfterViewInit(): void {
+      document.addEventListener('keydown',(e)=>{
+        if(e.code == 'Enter'){
+          this.Entrar()
+        }
+      })
+  }
 
   public Entrar(){
     const user = listaUsuarioFake.find((e)=>{
