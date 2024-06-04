@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: white;
 }
 
 .home-header > div {
@@ -34,7 +35,7 @@
     position: relative;
     width: 30vw;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
     align-content: center;
     padding-left: 10vw;
 }
@@ -61,18 +62,75 @@
 }
 
 .week{
-    background-color: red;
     height: 100%;
     width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.week > div {
+    margin: 10%;
+    border: 1px solid #313439;
+    border-radius: 10px;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .profile{
     width: 100%;
     height: 20%;
-    background-color: red;
+    display: flex;
 }
+
+.profile-left{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-right{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h4{
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+    }
+    h6{
+        margin: 0;
+        padding: 0;
+        color: gray;
+    }
+}
+
 .nav{
     width: 100%;
     height: 80%;
-    background-color: green;
+}
+
+.nav > button {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.nav > button > img {
+    width: 20px;
+    padding: 0 20px;
 }
