@@ -27,7 +27,7 @@
                     <img src="assets/images/inicio.png">
                     <p>Início</p>
                 </Button>
-                <Button>
+                <Button (click)="navigatingToPublish()">
                     <img src="assets/images/publicar.png">
                     <p>Publicar</p>
                 </Button>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="timeline">
-
+            <router-outlet></router-outlet>
         </div>
         <div class="week">
             <div>
