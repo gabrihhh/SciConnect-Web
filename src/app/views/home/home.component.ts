@@ -8,9 +8,19 @@ import { UserService } from 'src/app/shared/services/storage/user/user.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent{
-  constructor(private router:Router,private route: ActivatedRoute){}
+
+
+  constructor(private router:Router,private route: ActivatedRoute,){}
 
   public navigatingToPublish(){
     this.router.navigate(['publish'], { relativeTo: this.route });
+  }
+
+  public navigatingToTimeline() {
+    this.router.navigate(['timeline'],{ relativeTo: this.route });
+  }
+
+  public navigatingToNotification() {
+    this.router.navigate(['notification'],{ relativeTo: this.route });
   }
 }
