@@ -8,22 +8,24 @@ import { RegisterComponent } from './views/register/register.component';
 import { NotificationComponent } from './views/notification/notification.component';
 import { TimelineComponent } from './views/timeline/timeline.component';
 import { PublishComponent } from './views/publish/publish.component';
+import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    NotificationComponent,
-    TimelineComponent,
-    PublishComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        RegisterComponent,
+        NotificationComponent,
+        TimelineComponent,
+        PublishComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        LetterIconModule
+    ]
 })
 export class AppModule { }

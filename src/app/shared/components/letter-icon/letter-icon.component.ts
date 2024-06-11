@@ -10,4 +10,5 @@ export class LetterIconComponent {
   @Input() nome:string = '';
   @Input() size: string = '';
   @Input() fontSize: string = '';
+  @Input() radiusSize: string = '20';
 }

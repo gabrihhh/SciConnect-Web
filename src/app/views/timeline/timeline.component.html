@@ -1,1 +1,18 @@
-<p>timeline works!</p>
+<div class="timeline-page">
+    <div *ngFor="let post of data" class="card-timeline">
+        <div class="header-post">
+            <app-letter-icon
+            [nome]="post.user.nomeCompleto"
+            size="40"
+            fontSize="20"
+            radiusSize="10"
+            ></app-letter-icon>
+            <div>
+                <h5>{{ post.user.nomeCompleto }}</h5>
+                <h6>{{ post.data }}</h6>
+            </div>
+        </div>
+        <h3>{{ post.titulo }}</h3>
+        <p>{{ post.descricao }}</p>
+    </div>
+</div>
