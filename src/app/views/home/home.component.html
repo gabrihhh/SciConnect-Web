@@ -5,7 +5,7 @@
             <img src="assets/images/procurar.png">
             <input type="text" placeholder="Pesquisar no SciConnect">
         </div>
-        <img src="assets/images/person.png">
+        <img src="assets/images/bell.png">
     </div>
     <div class="home-content">
         <div class="sidebar">
@@ -45,26 +45,28 @@
             <router-outlet></router-outlet>
         </div>
         <div class="week">
-            <div>
+            <div class="week-border">
                 <p>Mais lidas da semana:</p>
-                <div class="week-card" *ngFor="let item of dataWeek">
-                    <div class="week-card-header">
-                        <app-letter-icon
-                            [nome]="item.user.nome"
-                            size="35"
-                            fontSize="20"
-                            radiusSize="10"
-                        ></app-letter-icon>
-                        <div>
-                            <button>{{ item.user.nome }}</button>
-                            <h5>{{ item.data }}</h5>
+                <div>
+                    <div class="week-card" *ngFor="let item of dataWeek">
+                        <div class="week-card-header">
+                            <app-letter-icon
+                                [nome]="item.user.nome"
+                                size="35"
+                                fontSize="20"
+                                radiusSize="10"
+                            ></app-letter-icon>
+                            <div>
+                                <button>{{ item.user.nome }}</button>
+                                <h5>{{ item.data }}</h5>
+                            </div>
+                            <button class="week-ellipses">
+                                <img src="assets/images/ellipses.png">
+                            </button>
                         </div>
-                        <button class="week-ellipses">
-                            <img src="assets/images/ellipses.png">
-                        </button>
+                        <h5>{{ item.titulo }}</h5>
+                        <h6>{{ item.descricao }}</h6>
                     </div>
-                    <h5>{{ item.titulo }}</h5>
-                    <h6>{{ item.descricao }}</h6>
                 </div>
             </div>
         </div>
