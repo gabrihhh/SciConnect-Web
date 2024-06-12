@@ -13,10 +13,10 @@
                 radiusSize="10"
                 ></app-letter-icon>
                 <div>
-                    <h5>{{ data.user.nomeCompleto }}</h5>
+                    <button (click)="toPerfil(data.user)">{{ data.user.nomeCompleto }}</button>
                     <h6>{{ data.data }}</h6>
                 </div>
-                <button>
+                <button class="ellipses">
                     <img src="assets/images/ellipses.png">
                 </button>
             </div>
@@ -32,9 +32,6 @@
                 radiusSize="10"
                 ></app-letter-icon>
                 <h5>{{ data.nomeCompleto }}</h5>
-                <button>
-                    <img src="assets/images/ellipses.png">
-                </button>
             </button>
         </div>
     </div>

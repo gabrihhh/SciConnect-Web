@@ -38,11 +38,14 @@
     div{
         margin-left: 10px;
 
-        h5{
+        button{
             margin: 0;
             padding: 0;
             font-weight: lighter;
             font-size: 20px;
+            background-color: white;
+            border: none;
+            cursor:pointer;
         }
 
         h6{
@@ -51,14 +54,6 @@
             font-weight: lighter;
             color: gray;
         }
-    }
-
-    button{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
     }
 }
 
@@ -103,12 +98,12 @@
         font-weight: lighter;
         font-size: 20px;
     }
+}
 
-    button{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-    }
+.ellipses{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
 }
