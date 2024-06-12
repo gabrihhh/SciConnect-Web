@@ -7,10 +7,16 @@ import { UserService } from 'src/app/shared/services/storage/user/user.service'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit{
+  private abaAtiva:'artigo' | 'perfil' = 'artigo';
 
 
   constructor(private router:Router,private route: ActivatedRoute,){}
+
+
+  ngOnInit(): void {
+      
+  }
 
   public navigatingToPublish(){
     this.router.navigate(['publish'], { relativeTo: this.route });
