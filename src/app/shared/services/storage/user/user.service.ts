@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUserLogin } from 'src/app/shared/interface/user.interface';
+import { IUser } from 'src/app/shared/interface/user.interface';
 
 
 @Injectable({
@@ -9,11 +9,15 @@ export class UserService {
 
   constructor() {}
 
-  public setUser(user:IUserLogin){
+  public setUser(user:IUser){
       localStorage.setItem('user',JSON.stringify(user))
   }
 
-  public getUSer(){
+  public getUser(){
     return localStorage.getItem('user');
+  }
+
+  public clearLocarStorage(){
+    return localStorage.clear()
   }
 }

@@ -12,14 +12,14 @@
             <div class="profile">
                 <div class="profile-left">
                     <app-letter-icon
-                    nome="gabriel"
+                    [nome]="user?.nome!"
                     size="50"
                     fontSize="30"
                 ></app-letter-icon>
                 </div>
                 <div class="profile-right">
-                    <h4>Gabriel Patara</h4>
-                    <h6>Estudante</h6>
+                    <h4>{{user?.nome!}}</h4>
+                    <h6>{{user?.diciplina!}}</h6>
                 </div>
             </div>
             <div class="nav">
@@ -35,6 +35,10 @@
                     <img src="assets/images/notificacoes.png">
                     <p>Notificações</p>
                 </Button>
+                <Button (click)="logout()">
+                    <img src="assets/images/logout.png">
+                    <p>Logout</p>
+                </Button>
             </div>
         </div>
         <div class="timeline">
@@ -43,7 +47,21 @@
         <div class="week">
             <div>
                 <p>Mais lidas da semana:</p>
-                <div></div>
+                <div *ngFor="let item of dataWeek">
+                    <div class="week-card">
+                        <div class="week-card-header">
+                            <app-letter-icon
+                                [nome]="item.nome"
+                                size="50"
+                                fontSize="30"
+                            ></app-letter-icon>
+                            <div>
+                                <button>{{ item.nome }}</button>
+                                <h5>{{ item.data }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

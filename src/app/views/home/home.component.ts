@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { IPost } from 'src/app/shared/interface/user.interface';
+import { IPost, IUser } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service'
 
 @Component({
@@ -10,13 +10,24 @@ import { UserService } from 'src/app/shared/services/storage/user/user.service'
 })
 export class HomeComponent implements OnInit{
   public dataWeek:IPost[] = []
+  public user:IUser | null = null
 
+  constructor(
+    private router:Router,
+    private route: ActivatedRoute,
+    private userService: UserService,
+  ){
+    this.user = JSON.parse(this.userService.getUser()!);
 
-  constructor(private router:Router,private route: ActivatedRoute,){}
+    if(!this.user){
+      this.userService.clearLocarStorage();
+      this.router.navigate(['/login'])
+    }
+  }
 
 
   ngOnInit(): void {
-
+    this.getWeek();
   }
 
   public getWeek(){
@@ -29,7 +40,9 @@ export class HomeComponent implements OnInit{
           nome:'Caio',
           email:'caio.teste@gmail.com',
           telefone:'11978651234',
-          userid:2
+          userid:2,
+          senha:'123',
+          diciplina:'Estudante'
         }
       })
     }
@@ -45,5 +58,10 @@ export class HomeComponent implements OnInit{
 
   public navigatingToNotification() {
     this.router.navigate(['notification'],{ relativeTo: this.route });
+  }
+
+  public logout() {
+    this.userService.clearLocarStorage()
+    this.router.navigate(['/login'])
   }
 }
