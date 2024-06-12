@@ -20,7 +20,8 @@
     width: 80%;
     border-radius: 20px;
     justify-content: space-around;
-    padding-left: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
 
     h3{
         padding: 0;
@@ -32,6 +33,7 @@
     display: flex;
     height: 50px;
     align-items: center;
+    position: relative;
 
     div{
         margin-left: 10px;
@@ -49,6 +51,14 @@
             font-weight: lighter;
             color: gray;
         }
+    }
+
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
     }
 }
 
@@ -83,9 +93,22 @@
     border-radius: 10px;
     margin-bottom: 10px;
     width: 400px;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
 
     h5{
         padding: 0 10px;
         margin: 0;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
     }
 }

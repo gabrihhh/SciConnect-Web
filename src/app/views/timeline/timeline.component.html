@@ -3,33 +3,39 @@
     <button (click)="changeType('perfil')">Perfil</button>
 </div>
 <div class="timeline-page">
-    <div *ngFor="let post of data" class="timeline">
+    <div *ngFor="let data of datasource" class="timeline">
         <div *ngIf="typeofdata === 'artigo'" class="card-timeline">
             <div class="header-post">
                 <app-letter-icon
-                [nome]="post.user.nomeCompleto"
+                [nome]="data.user.nomeCompleto"
                 size="40"
                 fontSize="20"
                 radiusSize="10"
                 ></app-letter-icon>
                 <div>
-                    <h5>{{ post.user.nomeCompleto }}</h5>
-                    <h6>{{ post.data }}</h6>
+                    <h5>{{ data.user.nomeCompleto }}</h5>
+                    <h6>{{ data.data }}</h6>
                 </div>
+                <button>
+                    <img src="assets/images/ellipses.png">
+                </button>
             </div>
-            <h3>{{ post.titulo }}</h3>
-            <p>{{ post.descricao }}</p>
+            <h3>{{ data.titulo }}</h3>
+            <p>{{ data.descricao }}</p>
         </div>
         <div *ngIf="typeofdata === 'perfil'">
-            <div class="perfil-card">
+            <button class="perfil-card" (click)="toPerfil(data)">
                 <app-letter-icon
-                [nome]="post.nomeCompleto"
+                [nome]="data.nomeCompleto"
                 size="40"
                 fontSize="20"
                 radiusSize="10"
                 ></app-letter-icon>
-                <h5>{{ post.nomeCompleto }}</h5>
-            </div>
+                <h5>{{ data.nomeCompleto }}</h5>
+                <button>
+                    <img src="assets/images/ellipses.png">
+                </button>
+            </button>
         </div>
     </div>
 </div>

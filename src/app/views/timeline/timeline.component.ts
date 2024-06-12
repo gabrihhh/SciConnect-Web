@@ -19,8 +19,7 @@ interface IUsuario{
   styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent implements OnInit{
-  public data: any = [];
-  public dataUsuario: IUsuario[] = [];
+  public datasource: any = [];
   public typeofdata: 'artigo'|'perfil' = 'artigo'
 
   ngOnInit(): void {
@@ -28,11 +27,11 @@ export class TimelineComponent implements OnInit{
   }
 
   public getPosts(){
-    this.data = []
+    this.datasource = []
     switch(this.typeofdata){
       case 'artigo':
         for(let i = 0;i<4;i++){
-          this.data.push(
+          this.datasource.push(
             {
               user:{
               nomeCompleto: 'gabriel'
@@ -46,7 +45,7 @@ export class TimelineComponent implements OnInit{
         break
       case 'perfil':
         for(let i = 0;i<4;i++){
-          this.data.push({
+          this.datasource.push({
             nomeCompleto:'teste'
           })
         }
@@ -57,5 +56,9 @@ export class TimelineComponent implements OnInit{
   public changeType(type:'artigo'|'perfil'){
     this.typeofdata = type;
     this.getPosts()
+  }
+
+  public toPerfil(user:IUsuario){
+    console.log(user)
   }
 }
