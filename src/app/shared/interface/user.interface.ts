@@ -4,5 +4,16 @@ export interface IUser
   nome: string;
   email:string;
   telefone:string;
-  senha: string;
+}
+
+export interface IPost{
+  user:IUser
+  data: string;
+  titulo: string;
+  descricao: string;
+}
+
+export interface IUserLogin{
+  nome:string;
+  senha:string;
 }

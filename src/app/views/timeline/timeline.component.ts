@@ -1,23 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-interface IPost{
-  user:{
-    nomeCompleto: string;
-  };
-  data: string;
-  titulo: string;
-  descricao: string;
-}
-
-interface IUsuario{
-  nomeCompleto: string;
-}
+import { IUser } from 'src/app/shared/interface/user.interface';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
+
 export class TimelineComponent implements OnInit{
   public datasource: any = [];
   public typeofdata: 'artigo'|'perfil' = 'artigo'
@@ -34,7 +23,7 @@ export class TimelineComponent implements OnInit{
           this.datasource.push(
             {
               user:{
-              nomeCompleto: 'gabriel'
+              nome: 'gabriel'
               },
               data: '02/05/2000',
               titulo: 'teste',
@@ -46,7 +35,7 @@ export class TimelineComponent implements OnInit{
       case 'perfil':
         for(let i = 0;i<4;i++){
           this.datasource.push({
-            nomeCompleto:'teste'
+            nome:'teste'
           })
         }
         break
@@ -58,7 +47,7 @@ export class TimelineComponent implements OnInit{
     this.getPosts()
   }
 
-  public toPerfil(user:IUsuario){
+  public toPerfil(user:IUser){
     console.log(user)
   }
 }

@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IUser } from 'src/app/shared/interface/user.interface';
+import { IUser, IUserLogin } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service';
 
-const listaUsuarioFake:IUser[] = [
-  {email:'gabriel.patara@gmail.com',nome:'gabriel',telefone:'11999999999',userid:1,senha:'123'},
-  {email:'teste@gmail.com',nome:'teste',telefone:'11999999999',userid:2, senha:'123'},
+
+const listaUsuarioFake:IUserLogin[] = [
+  {nome:'gabriel',senha:'123'},
+  {nome:'teste',senha:'321'},
 ] 
 
 @Component({
