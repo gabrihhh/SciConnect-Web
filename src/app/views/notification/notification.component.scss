@@ -52,8 +52,30 @@
 
 .ellipses-card-notification{
     position: absolute;
-    right: 20px;
+    right: 10px;
     border: none;
     background-color: white;
-    cursor: pointer;
+    display: flex;
+
+    button{
+        font-weight: 500;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 35px;
+        cursor: pointer;
+    }
+
+    button:nth-child(1){
+       margin-right: 10px; 
+       background-color: #3B713A;
+    }
+
+    button:nth-child(2){
+        background-color: #71403A;
+    }
 }
