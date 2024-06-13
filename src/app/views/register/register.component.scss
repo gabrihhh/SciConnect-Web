@@ -51,7 +51,7 @@
     width: 300px;
     height: 80px;
     font-size: 20px;
-    margin: 30px 0;
+    margin: 30px 0 10px 0;
 }
 
 .register-inputs-radio{
@@ -81,4 +81,20 @@
             font-size: 20px;
         }
     }
+}
+
+.voltarbtn{
+    background-color: #313439;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 40px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.formError{
+    color: red;
+    padding: 0;
+    margin: 0;
 }

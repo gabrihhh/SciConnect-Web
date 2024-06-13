@@ -1,6 +1,6 @@
 <div class="timeline-choice">
-    <button (click)="changeType('artigo')">Artigo</button>
-    <button (click)="changeType('perfil')">Perfil</button>
+    <button #artigobtn (click)="changeType('artigo')">Artigo</button>
+    <button #perfilbtn (click)="changeType('perfil')">Perfil</button>
 </div>
 <div class="timeline-page">
     <div *ngFor="let data of datasource" class="timeline">
@@ -16,9 +16,6 @@
                     <button (click)="toPerfil(data.user)">{{ data.user.nome }}</button>
                     <h6>{{ data.data }}</h6>
                 </div>
-                <button class="ellipses">
-                    <img src="assets/images/ellipses.png">
-                </button>
             </div>
             <h3>{{ data.titulo }}</h3>
             <p>{{ data.descricao }}</p>

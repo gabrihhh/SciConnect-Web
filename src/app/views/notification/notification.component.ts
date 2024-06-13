@@ -26,7 +26,7 @@ export class NotificationComponent implements OnInit{
           telefone:'11978651234',
           userid:2,
           senha:'123',
-          diciplina:'Estudante',
+          usertype:'Estudante',
 
         }
       })

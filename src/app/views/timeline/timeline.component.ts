@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IPost, IUser } from 'src/app/shared/interface/user.interface';
 
@@ -16,8 +16,7 @@ export class TimelineComponent implements OnInit{
   constructor(private route: ActivatedRoute){}
 
   ngOnInit(): void {
-      this.getPosts()
-
+      this.getPosts();
       this.route.queryParams.subscribe(params => {
         this.getPosts()
         this.parametro = params['parametro'];

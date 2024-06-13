@@ -19,7 +19,11 @@
                 <input #inputEmail type="text" placeholder="E-mail" class="input-text">
                 <input #inputSenha type="text" placeholder="Senha" class="input-text">
                 <input #inputSenhaNovamente type="text" placeholder="Confirmar Senha" class="input-text">
+                <h5 class="formError" *ngIf="Error">
+                    Preencha novamente o formulário e tente novamente!
+                </h5>
                 <button class="btn-criar-conta" (click)="CriarConta()">Criar Conta</button>
+                <button (click)="navigateToLogin()" class="voltarbtn">Voltar</button>
             </div>
     </div>
 </div>

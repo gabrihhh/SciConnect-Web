@@ -5,12 +5,12 @@
             <img src="assets/images/procurar.png">
             <input type="text" placeholder="Pesquisar no SciConnect" [(ngModel)]="inputValue" (ngModelChange)="onInputChange($event)">
         </div>
-        <img src="assets/images/bell.png" style="cursor: pointer;">
+        <img src="assets/images/bell.png" style="opacity: 0;">
     </div>
     <div class="home-content">
         <div class="sidebar">
-            <div class="profile">
-                <div class="profile-left">
+            <div class="profile" (click)="toPerfil(user!)">
+                <div class="profile-left" >
                     <app-letter-icon
                     [nome]="user?.nome!"
                     size="50"
@@ -19,7 +19,7 @@
                 </div>
                 <div class="profile-right">
                     <h4>{{user?.nome!}}</h4>
-                    <h6>{{user?.diciplina!}}</h6>
+                    <h6>{{user?.usertype!}}</h6>
                 </div>
             </div>
             <div class="nav">
@@ -31,7 +31,7 @@
                     <img src="assets/images/publicar.png">
                     <p>Publicar</p>
                 </Button>
-                <Button (click)="navigatingToNotification()">
+                <Button *ngIf="user?.usertype === 'Colaborador'" (click)="navigatingToNotification()">
                     <img src="assets/images/notificacoes.png">
                     <p>Notificações</p>
                 </Button>
@@ -60,9 +60,6 @@
                                 <button>{{ item.user.nome }}</button>
                                 <h5>{{ item.data }}</h5>
                             </div>
-                            <button class="week-ellipses">
-                                <img src="assets/images/ellipses.png">
-                            </button>
                         </div>
                         <h5>{{ item.titulo }}</h5>
                         <h6>{{ item.descricao }}</h6>

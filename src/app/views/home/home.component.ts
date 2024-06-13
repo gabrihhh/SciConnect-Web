@@ -37,19 +37,19 @@ export class HomeComponent implements OnInit{
     }
   }
 
+  ngOnInit(): void {
+    this.getWeek();
+    this.navigateToTimeline();
+  }
+
   public navigateToHomeWithParams(param: string) {
     this.router.navigate(['timeline'], { queryParams: { parametro: param },relativeTo: this.route });
   }
-
 
   public navigateToTimeline(){
     this.router.navigate(['timeline'],{relativeTo:this.route})
   }
 
-  ngOnInit(): void {
-    this.getWeek();
-    this.navigateToTimeline();
-  }
 
   public onInputChange(value: string) {
     this.inputChangeSubject.next(value);
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit{
           telefone:'11978651234',
           userid:2,
           senha:'123',
-          diciplina:'Estudante',
+          usertype:'Estudante',
 
         }
       })
@@ -90,5 +90,9 @@ export class HomeComponent implements OnInit{
   public logout() {
     this.userService.clearLocarStorage()
     this.router.navigate(['/login'])
+  }
+
+  public toPerfil(user:IUser) {
+    console.log(user)
   }
 }
