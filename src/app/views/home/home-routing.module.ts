@@ -7,11 +7,11 @@ import { NotificationComponent } from '../notification/notification.component';
 ;
 
 const routes: Routes = [
-    {path:'',component:HomeComponent,children:[
-      {path:'publish', component: PublishComponent},
-      {path:'timeline', component: TimelineComponent},
-      {path:'notification', component: NotificationComponent}
-    ]},
+  { path: '', component: HomeComponent, children: [
+    { path: 'publish', component: PublishComponent },
+    { path: 'timeline', component: TimelineComponent },
+    { path: 'notification', component: NotificationComponent },
+  ]},
 ];
 
 @NgModule({
