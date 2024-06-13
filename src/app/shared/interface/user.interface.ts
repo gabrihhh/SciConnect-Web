@@ -3,9 +3,9 @@ export interface IUser
   userid:number;
   nome: string;
   email:string;
-  telefone:string;
   senha:string;
   usertype:'Estudante'|'Colaborador';
+  formacao:string;
 }
 
 export interface IPost{

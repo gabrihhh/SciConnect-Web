@@ -11,6 +11,7 @@ import { PublishComponent } from './views/publish/publish.component';
 import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.module";
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './views/login/login.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './views/login/login.component';
         NotificationComponent,
         TimelineComponent,
         PublishComponent,
-        LoginComponent
+        LoginComponent,
+        ProfileComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
