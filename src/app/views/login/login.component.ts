@@ -33,8 +33,8 @@ export class LoginComponent implements AfterViewInit,OnInit{
 
   public getUsuario(){
      this.listaUsuarios = [
-      {email:'gabriel.patara@gmail.com',nome:'gabriel',telefone:'11999999999',userid:1,senha:'123',usertype:'Estudante'},
-      {email:'teste@gmail.com',nome:'teste',telefone:'11999999999',userid:2, senha:'321',usertype:'Colaborador'},
+      {email:'gabriel.patara@gmail.com',nome:'gabriel',userid:1,senha:'123',usertype:'Estudante',formacao:'Desenvolvedor'},
+      {email:'teste@gmail.com',nome:'teste',userid:2, senha:'321',usertype:'Colaborador',formacao:'Administrador'},
      ]
   }
 

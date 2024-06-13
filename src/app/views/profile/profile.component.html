@@ -1,0 +1,18 @@
+<div class="profile-page">
+    <div class="profile-header">
+        <app-letter-icon
+            [nome]="user?.nome!"
+            size="50"
+            fontSize="30"
+        ></app-letter-icon>
+        <div>
+            <h4>{{user?.nome}}</h4>
+            <h5>{{user?.formacao}}</h5>
+            <div>
+                <h6>Seguindores {{seguidores}}</h6>
+                <h6>Seguindo {{seguindo}}</h6>
+            </div>
+        </div>
+        <button>Seguir</button>
+    </div>
+</div>

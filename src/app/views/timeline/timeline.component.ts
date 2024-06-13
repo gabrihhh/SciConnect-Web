@@ -8,7 +8,7 @@ import { IPost, IUser } from 'src/app/shared/interface/user.interface';
   styleUrls: ['./timeline.component.scss']
 })
 
-export class TimelineComponent implements OnInit{
+export class TimelineComponent implements OnInit {
   public datasource: any = [];
   public typeofdata: 'artigo'|'perfil' = 'artigo'
   public parametro: string | undefined;
@@ -16,7 +16,7 @@ export class TimelineComponent implements OnInit{
   constructor(private route: ActivatedRoute){}
 
   ngOnInit(): void {
-      this.getPosts();
+      this.getPosts()
       this.route.queryParams.subscribe(params => {
         this.getPosts()
         this.parametro = params['parametro'];

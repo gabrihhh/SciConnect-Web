@@ -23,11 +23,10 @@ export class NotificationComponent implements OnInit{
         user:{
           nome:'Caio',
           email:'caio.teste@gmail.com',
-          telefone:'11978651234',
           userid:2,
           senha:'123',
           usertype:'Estudante',
-
+          formacao:'Maluco'
         }
       })
     }

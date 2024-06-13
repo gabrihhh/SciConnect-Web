@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { PublishComponent } from '../publish/publish.component';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { NotificationComponent } from '../notification/notification.component';
+import { ProfileComponent } from '../profile/profile.component';
 ;
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'publish', component: PublishComponent },
     { path: 'timeline', component: TimelineComponent },
     { path: 'notification', component: NotificationComponent },
+    { path: 'profile', component: ProfileComponent}
   ]},
 ];
 

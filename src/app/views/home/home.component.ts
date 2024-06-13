@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
     this.inputChangeSubject
       .pipe(debounceTime(1000))
       .subscribe((value) => {
-        this.navigateToHomeWithParams(value);
+        this.navigateToTTimelineWithParams(value);
         setTimeout(() => {
           this.inputValue = '';
         }, 0);
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit{
     this.navigateToTimeline();
   }
 
-  public navigateToHomeWithParams(param: string) {
+  public navigateToTTimelineWithParams(param: string) {
     this.router.navigate(['timeline'], { queryParams: { parametro: param },relativeTo: this.route });
   }
 
@@ -65,11 +65,10 @@ export class HomeComponent implements OnInit{
         user:{
           nome:'Caio',
           email:'caio.teste@gmail.com',
-          telefone:'11978651234',
           userid:2,
           senha:'123',
           usertype:'Estudante',
-
+          formacao:'Desenvolvedor'
         }
       })
     }
@@ -93,6 +92,7 @@ export class HomeComponent implements OnInit{
   }
 
   public toPerfil(user:IUser) {
-    console.log(user)
+
+    this.router.navigate(['profile'], { queryParams: { parametro: JSON.stringify(user) },relativeTo: this.route });
   }
 }
