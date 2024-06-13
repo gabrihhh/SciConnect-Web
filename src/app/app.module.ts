@@ -9,6 +9,8 @@ import { NotificationComponent } from './views/notification/notification.compone
 import { TimelineComponent } from './views/timeline/timeline.component';
 import { PublishComponent } from './views/publish/publish.component';
 import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.module";
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,8 @@ import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.mo
         RegisterComponent,
         NotificationComponent,
         TimelineComponent,
-        PublishComponent
+        PublishComponent,
+        LoginComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -25,7 +28,8 @@ import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.mo
         AppRoutingModule,
         BrowserAnimationsModule,
         FormsModule,
-        LetterIconModule
+        LetterIconModule,
+        CommonModule
     ]
 })
 export class AppModule { }

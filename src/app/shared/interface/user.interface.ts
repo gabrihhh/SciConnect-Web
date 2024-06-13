@@ -13,4 +13,5 @@ export interface IPost{
   data: string;
   titulo: string;
   descricao: string;
+  views: number;
 }

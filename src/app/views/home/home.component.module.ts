@@ -3,6 +3,7 @@ import { HomeComponent } from "./home.component";
 import { HomeRoutingModule } from "./home-routing.module";
 import { LetterIconModule } from "src/app/shared/components/letter-icon/letter-icon.module";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { CommonModule } from "@angular/common";
     imports: [
         HomeRoutingModule,    
         LetterIconModule,
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
   })
   export class HomeModule {}

@@ -91,6 +91,12 @@ hr{
     flex-direction: row-reverse;
 }
 
+.senhaErrada{
+    margin: 0;
+    padding: 0;
+    color: red;
+}
+
 @media only screen and (min-width: 1250px) {
     .logo{
         width: 250px;

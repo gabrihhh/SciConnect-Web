@@ -7,6 +7,9 @@
         <div class="login-card">
             <input #inputLogin type="text" placeholder="Login" class="inputText">
             <input #inputSenha type="password" placeholder="Senha" class="inputText">
+            <div *ngIf="loginError">
+                <h5 class="senhaErrada">Login ou senha incorretos, tente novamente!</h5>
+            </div>
             <button (click)="Entrar()" class="btnEntrar">Entrar</button>
             <hr>
             <button (click)="Inscrever()" class="btnInscrever">Inscrever-se</button>

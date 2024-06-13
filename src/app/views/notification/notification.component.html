@@ -1,1 +1,22 @@
-<p>notification works!</p>
+<div class="notification-page">
+    <div class="notification-card" *ngFor="let item of dataNotification">
+        <div class="notification-card-header">
+            <app-letter-icon
+                [nome]="item.user.nome"
+                size="40"
+                fontSize="20"
+                radiusSize="10"
+            ></app-letter-icon>
+            <div>
+                <button (click)="toPerfil(item.user)">{{ item.user.nome }}</button>
+                <h5>{{ item.data }}</h5>
+            </div>
+            <Button class="ellipses-card-notification">
+                <img src="assets/images/ellipses.png">
+            </Button>
+        </div>
+        <h6>{{item.views}} views</h6>
+        <h5>{{item.titulo}}</h5>
+        <p>{{item.descricao}}</p>
+    </div>
+</div>

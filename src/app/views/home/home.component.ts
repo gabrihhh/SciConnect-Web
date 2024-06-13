@@ -12,7 +12,7 @@ import { UserService } from 'src/app/shared/services/storage/user/user.service'
 export class HomeComponent implements OnInit{
   public dataWeek:IPost[] = []
   public user:IUser | null = null
-
+  public inputValue: string = '';
   private inputChangeSubject: Subject<string> = new Subject<string>();
   
   constructor(
@@ -20,31 +20,38 @@ export class HomeComponent implements OnInit{
     private route: ActivatedRoute,
     private userService: UserService,
   ){
+    this.inputChangeSubject
+      .pipe(debounceTime(1000))
+      .subscribe((value) => {
+        this.navigateToHomeWithParams(value);
+        setTimeout(() => {
+          this.inputValue = '';
+        }, 0);
+      });
+
     this.user = JSON.parse(this.userService.getUser()!);
 
     if(!this.user){
       this.userService.clearLocarStorage();
       this.router.navigate(['/login'])
     }
-
-    this.inputChangeSubject
-      .pipe(debounceTime(3000))
-      .subscribe((value) => {
-        this.navigateToHome(value);
-      });
   }
 
-  public navigateToHome(param: string) {
+  public navigateToHomeWithParams(param: string) {
     this.router.navigate(['timeline'], { queryParams: { parametro: param },relativeTo: this.route });
   }
 
 
-  ngOnInit(): void {
-    this.getWeek();
+  public navigateToTimeline(){
+    this.router.navigate(['timeline'],{relativeTo:this.route})
   }
 
-  public onInputChange(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
+  ngOnInit(): void {
+    this.getWeek();
+    this.navigateToTimeline();
+  }
+
+  public onInputChange(value: string) {
     this.inputChangeSubject.next(value);
   }
 
@@ -54,13 +61,15 @@ export class HomeComponent implements OnInit{
         data:'30/09/2023',
         descricao:'Nullam sollicitudin odio non elit vehicula, ut fermentum turpis viverra. Phasellus lacinia ac dui et euismod. Aliquam posuere et ex ac tincidunt. Nunc convallis pulvinar vestibulum.',
         titulo:'A casa dos fitoplânctons',
+        views:1000,
         user:{
           nome:'Caio',
           email:'caio.teste@gmail.com',
           telefone:'11978651234',
           userid:2,
           senha:'123',
-          diciplina:'Estudante'
+          diciplina:'Estudante',
+
         }
       })
     }

@@ -15,7 +15,7 @@ export class LoginComponent implements AfterViewInit,OnInit{
   @ViewChild('inputSenha') inputSenha!: ElementRef
 
   public listaUsuarios:IUser[] = [] 
-
+  public loginError:boolean = false
 
   constructor(private userService:UserService,private router:Router){}
   
@@ -47,8 +47,9 @@ export class LoginComponent implements AfterViewInit,OnInit{
       this.userService.setUser(user);
       this.router.navigate(['home'])
     }else{
-
-      alert('n foi')
+      this.loginError = true;
+      this.inputLogin.nativeElement.value = ''
+      this.inputSenha.nativeElement.value = ''
     }
   }
 
