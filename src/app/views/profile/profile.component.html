@@ -14,5 +14,13 @@
             </div>
         </div>
         <button>Seguir</button>
+        <!-- <button>Deixar de Seguir</button> -->
+    </div>
+    <div class="profile-posts">
+        <div class="profile-posts-card" *ngFor="let item of postsOfUser">
+           <h4>{{item.titulo}}</h4> 
+           <h5>{{item.data}}</h5>
+           <p>{{item.describe}}</p>
+        </div>
     </div>
 </div>
