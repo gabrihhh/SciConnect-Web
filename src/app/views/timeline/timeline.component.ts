@@ -61,6 +61,5 @@ export class TimelineComponent implements OnInit {
 
   public changeType(type:'artigo'|'perfil'){
     this.typeofdata = type;
-    this.getPosts()
   }
 }
