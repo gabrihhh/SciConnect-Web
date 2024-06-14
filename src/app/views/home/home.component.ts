@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit{
     this.router.navigate(['timeline'],{relativeTo:this.route})
   }
 
-
   public onInputChange(value: string) {
     this.inputChangeSubject.next(value);
   }

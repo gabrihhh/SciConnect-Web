@@ -24,7 +24,7 @@ export class LoginComponent{
     if(this.inputLogin.nativeElement.value.trim() !== '' && this.inputSenha.nativeElement.value.trim() !== ''){
       this.requisicoesService.postLogin(this.inputLogin.nativeElement.value,this.inputSenha.nativeElement.value).subscribe({
         next:(res: IResponseLogin[]) => {
-            if(res.length===1){
+            if(res.length>0){
               this.userService.setUser(res[0])
               this.router.navigate(['/home'])
             }

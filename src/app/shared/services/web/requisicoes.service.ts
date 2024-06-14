@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { environments } from 'src/environments';
 import { IEstudante, IResponseCadastro, IResponseLogin, IResponsePost } from '../../interface/user.interface';
 import { Observable } from 'rxjs';
@@ -50,5 +50,18 @@ export class RequisicoesService {
       propostaEstudo:proposta,
       documentoVerificado:"NAO"
     })
+  }
+
+  public getDocumentosParaValidacao():Observable<IResponsePost[]>{
+    return this.http.get<IResponsePost[]>(`${environments.endpoint}/v1/avaliacao/pendentes`)
+  }
+
+  public putAtualizarStatusDocumento(idDocumento:number,status:boolean):Observable<IResponsePost>{
+    const validar = status ? 'SIM' : 'NAO'
+
+    const params = new HttpParams()
+    .set('documentoVerificado',validar)
+
+    return this.http.put<IResponsePost>(`${environments.endpoint}/v1/avaliacao/${idDocumento}`,params);
   }
 }

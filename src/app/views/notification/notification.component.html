@@ -12,8 +12,8 @@
                 <!-- <h5>{{ item.data }}</h5> -->
             </div>
             <Button class="ellipses-card-notification">
-                <button>Aprovado</button>
-                <button>Reprovado</button>
+                <button (click)="atualizaNotification(item.idDocumento,true)">Aprovado</button>
+                <button (click)="atualizaNotification(item.idDocumento,false)">Reprovado</button>
             </Button>
         </div>
         <!-- <h6>{{item.views}} views</h6> -->
