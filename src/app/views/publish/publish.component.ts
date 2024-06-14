@@ -34,11 +34,8 @@ export class PublishComponent{
         this.inputTexto.nativeElement.value.trim()
       ).subscribe({
         next:(res)=>{
-          console.log(res)
+          this.router.navigate(['timeline'])
         },
-        error:(err)=>{
-          console.error(err)
-        }
       })
     }
   }

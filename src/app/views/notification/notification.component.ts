@@ -27,7 +27,7 @@ export class NotificationComponent implements OnInit{
   public atualizaNotification(idDocumento:number,status:boolean){
     this.requisicoesService.putAtualizarStatusDocumento(idDocumento,status).subscribe({
       next:(res)=>{
-        
+        this.getNotification()
       }
     })
   }
