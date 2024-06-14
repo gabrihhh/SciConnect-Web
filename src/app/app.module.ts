@@ -12,6 +12,7 @@ import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.mo
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './views/login/login.component';
 import { ProfileComponent } from './views/profile/profile.component';
+import { RequisicoesService } from './shared/services/web/requisicoes.service';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,7 @@ import { ProfileComponent } from './views/profile/profile.component';
         LoginComponent,
         ProfileComponent
     ],
-    providers: [],
+    providers: [RequisicoesService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
