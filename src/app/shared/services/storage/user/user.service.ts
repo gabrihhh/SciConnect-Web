@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IUser } from 'src/app/shared/interface/user.interface';
+import { IResponseLogin } from '../../web/requisicoes.service';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ export class UserService {
 
   constructor() {}
 
-  public setUser(user:IUser){
+  public setUser(user:IResponseLogin){
       localStorage.setItem('user',JSON.stringify(user))
   }
 

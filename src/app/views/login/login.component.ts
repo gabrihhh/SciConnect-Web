@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service';
-import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
+import { IResponseLogin, RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
 
 
 
@@ -31,12 +31,19 @@ export class LoginComponent implements AfterViewInit{
 
   public Entrar(){
     if(this.inputLogin.nativeElement.value.trim() !== '' && this.inputSenha.nativeElement.value.trim() !== ''){
-      const user:IUser[] = this.requisicoesService.postLogin(this.inputLogin.nativeElement.value,this.inputSenha.nativeElement.value)
-      if(user.length>0){
-        this.userService.setUser(user[0])
-      }else{
-        this.loginError = true
-      }
+      this.requisicoesService.postLogin(this.inputLogin.nativeElement.value,this.inputSenha.nativeElement.value).subscribe({
+        next:(res: IResponseLogin[]) => {
+          if(res.length>0){
+            if(res[0]){
+              this.userService.setUser(res[0])
+              this.router.navigate(['home'])
+            }
+          } 
+        },
+        error:(error) => {
+          console.error(error); 
+        }
+      });
     }
   }
 

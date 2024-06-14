@@ -48,41 +48,8 @@ export class TimelineComponent implements OnInit {
     this.datasource = []
     switch(this.typeofdata){
       case 'artigo':
-        for(let i = 0;i<4;i++){
-          this.datasource.push(
-            {
-              user:{
-              nome: 'gabriel'
-              },
-              data: '02/05/2000',
-              titulo: 'teste',
-              descricao: 'Curabitur molestie odio diam, non sagittis turpis pulvinar ac. Nullam fringilla non velit vel iaculis. Curabitur neque lorem, ornare ut purus non, faucibus fringilla nulla. Integer mauris metus, finibus sed sapien non, gravida tincidunt mi. Phasellus laoreet ligula vel libero venenatis, eu tristique dui varius. Quisque in nunc vitae metus viverra dignissim.'
-            }
-          )
-        }
-        this.datasource.push(
-          {
-            user:{
-            nome: 'gabriel'
-            },
-            data: '02/05/2000',
-            titulo: 'jogos',
-            descricao: 'Curabitur molestie odio diam, non sagittis turpis pulvinar ac. Nullam fringilla non velit vel iaculis. Curabitur neque lorem, ornare ut purus non, faucibus fringilla nulla. Integer mauris metus, finibus sed sapien non, gravida tincidunt mi. Phasellus laoreet ligula vel libero venenatis, eu tristique dui varius. Quisque in nunc vitae metus viverra dignissim.'
-          }
-        )
         break
       case 'perfil':
-        for(let i = 0;i<4;i++){
-          this.datasource.push({
-            nome:'teste'
-          })
-        }
-        this.datasource.push({
-          nome:'matheus'
-        })
-        this.datasource.push({
-          nome:'gabriel'
-        })
         break
     }
   }
