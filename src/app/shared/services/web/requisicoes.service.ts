@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environments } from 'src/environments';
-import { IResponseCadastro, IResponseLogin, IResponsePost } from '../../interface/user.interface';
+import { IEstudante, IResponseCadastro, IResponseLogin, IResponsePost } from '../../interface/user.interface';
 import { Observable } from 'rxjs';
 
 
@@ -19,7 +19,7 @@ export class RequisicoesService {
 
   public postLogin(login: string, senha: string): Observable<IResponseLogin[]> {
     return this.http.post<IResponseLogin[]>(`${environments.endpoint}/v1/login`, {
-      login: login.trim(),
+      login: login.trim().toLowerCase(),
       senha: senha.trim()
     });
   }
@@ -28,13 +28,17 @@ export class RequisicoesService {
     return this.http.post<IResponseCadastro>(
       `${environments.endpoint}/v1/estudante`,
       {
-        documentoEstudante:cpf,
-        nomeEstudante:nome,
-        areaInteresse:area,
-        senhaEstudante:senha,
-        tipoUsuario:tipo,
-        ultimoLogin:data
+        documentoEstudante:cpf.toLowerCase(),
+        nomeEstudante:nome.toLowerCase(),
+        areaInteresse:area.toLowerCase(),
+        senhaEstudante:senha.toLowerCase(),
+        tipoUsuario:tipo.toLowerCase(),
+        ultimoLogin:data.toLowerCase()
       }
     )
+  }
+
+  public getExplorer(param:string):Observable<{estudante:IEstudante[],documento:IResponsePost[]}>{
+    return this.http.get<{estudante:IEstudante[],documento:IResponsePost[]}>(`${environments.endpoint}/v1/home/explorer/${param.toLowerCase()}`)
   }
 }

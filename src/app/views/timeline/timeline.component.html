@@ -7,28 +7,28 @@
         <div *ngIf="typeofdata === 'artigo'" class="card-timeline">
             <div class="header-post">
                 <app-letter-icon
-                [nome]="data.user.nome"
+                [nome]="data.autor"
                 size="40"
                 fontSize="20"
                 radiusSize="10"
                 ></app-letter-icon>
                 <div>
-                    <button (click)="toPerfil(data.user)">{{ data.user.nome }}</button>
-                    <h6>{{ data.data }}</h6>
+                    <button (click)="toPerfil(data.autor)">{{ data.autor }}</button>
+                    <!-- <h6>{{ data.data }}</h6> -->
                 </div>
             </div>
-            <h3>{{ data.titulo }}</h3>
-            <p>{{ data.descricao }}</p>
+            <h3>{{ data.nomeDocumento }}</h3>
+            <p>{{ data.propostaEstudo }}</p>
         </div>
         <div *ngIf="typeofdata === 'perfil'">
-            <button class="perfil-card" (click)="toPerfil(data)">
+            <button class="perfil-card" (click)="toPerfil(data.idEstudante)">
                 <app-letter-icon
-                [nome]="data.nome"
+                [nome]="data.nomeEstudante"
                 size="40"
                 fontSize="20"
                 radiusSize="10"
                 ></app-letter-icon>
-                <h5>{{ data.nome }}</h5>
+                <h5>{{ data.nomeEstudante }}</h5>
             </button>
         </div>
     </div>

@@ -21,44 +21,51 @@ export class TimelineComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.getPosts()
         this.parametro = params['parametro'];
-        this.filterItems(this.typeofdata);
+        this.filterItems();
       });
 
   }
 
-  filterItems(type:'artigo'|'perfil') {
+  filterItems() {
     if (this.parametro){
-      switch(type){
-        case 'artigo':
-          this.datasource = this.datasource.filter((item:IResponsePost) => 
-            item.nomeDocumento.toLowerCase().includes(this.parametro!.toLowerCase())
-          );
-          break
-        case 'perfil':
-          this.datasource = this.datasource.filter((item:any) => 
-            item.nome.toLowerCase().includes(this.parametro!.toLowerCase())
-          );
-          break
-      }
+      this.getPosts(this.parametro)
     }
   }
 
-  public getPosts(){
+  public getPosts(params?:string){
     this.datasource = []
-    switch(this.typeofdata){
-      case 'artigo':
-        this.requisicoesService.getPosts().subscribe({
-          next:(res:IResponsePost[])=>{
-            this.datasource = res
-          },
-          error:(err)=>{
-            console.error(err)
-          }
-        })
-        break
-      case 'perfil':
-        break
+    if(params){
+      switch(this.typeofdata){
+        case 'artigo':
+          this.requisicoesService.getExplorer(params).subscribe({
+            next:(res)=>{
+              this.datasource = res.documento
+            }
+          })
+          break
+        case 'perfil':
+          this.requisicoesService.getExplorer(params).subscribe({
+            next:(res)=>{
+              this.datasource = res.estudante
+            }
+          })
+          break
+      }
+    }else{
+      switch(this.typeofdata){
+        case 'artigo':
+          this.requisicoesService.getPosts().subscribe({
+            next:(res:IResponsePost[])=>{
+              this.datasource = res
+            },
+            error:(err)=>{
+              console.error(err)
+            }
+          })
+          break
+      }
     }
+    
   }
 
   public changeType(type:'artigo'|'perfil'){
