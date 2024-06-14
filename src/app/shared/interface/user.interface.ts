@@ -1,17 +1,20 @@
 export interface IUser
 {
-  userid:number;
-  nome: string;
-  email:string;
-  senha:string;
   usertype:'Estudante'|'Colaborador';
-  formacao:string;
+  documentoEstudante: string;
+  areaInteresse: string;
+  ultimoLogin: string;
+  nome: string;
+  documento: string;
+  areaEstudo: string;
+  senha: string;
+  verificado: string;
 }
 
 export interface IPost{
-  user:IUser
-  data: string;
-  titulo: string;
-  descricao: string;
-  views: number;
+  autor: string;
+  areaEstudoDocumento: string;
+  nomeDocumento: string;
+  propostaEstudo: string;
+  documentoVerificado: string;
 }

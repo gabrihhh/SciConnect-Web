@@ -7,20 +7,20 @@
         ></app-letter-icon>
         <div>
             <h4>{{user?.nome}}</h4>
-            <h5>{{user?.formacao}}</h5>
-            <div>
+            <h5>{{user?.areaInteresse}}</h5>
+            <!-- <div>
                 <h6>Seguindores {{seguidores}}</h6>
                 <h6>Seguindo {{seguindo}}</h6>
-            </div>
+            </div> -->
         </div>
         <button>Seguir</button>
         <!-- <button>Deixar de Seguir</button> -->
     </div>
     <div class="profile-posts">
         <div class="profile-posts-card" *ngFor="let item of postsOfUser">
-           <h4>{{item.titulo}}</h4> 
-           <h5>{{item.data}}</h5>
-           <p>{{item.describe}}</p>
+           <h4>{{item.nomeDocumento}}</h4> 
+           <!-- <h5>{{item.data}}</h5> -->
+           <p>{{item.propostaEstudo}}</p>
         </div>
     </div>
 </div>

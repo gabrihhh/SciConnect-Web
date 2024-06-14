@@ -31,7 +31,7 @@ export class TimelineComponent implements OnInit {
       switch(type){
         case 'artigo':
           this.datasource = this.datasource.filter((item:IPost) => 
-            item.titulo.toLowerCase().includes(this.parametro!.toLowerCase())
+            item.nomeDocumento.toLowerCase().includes(this.parametro!.toLowerCase())
           );
           break
         case 'perfil':

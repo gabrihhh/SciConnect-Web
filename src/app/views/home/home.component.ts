@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.getWeek();
     this.navigateToTimeline();
   }
 
@@ -54,25 +53,6 @@ export class HomeComponent implements OnInit{
 
   public onInputChange(value: string) {
     this.inputChangeSubject.next(value);
-  }
-
-  public getWeek(){
-    for(let i = 0;i<5;i++){
-      this.dataWeek.push({
-        data:'30/09/2023',
-        descricao:'Nullam sollicitudin odio non elit vehicula, ut fermentum turpis viverra. Phasellus lacinia ac dui et euismod. Aliquam posuere et ex ac tincidunt. Nunc convallis pulvinar vestibulum.',
-        titulo:'A casa dos fitoplânctons',
-        views:1000,
-        user:{
-          nome:'Caio',
-          email:'caio.teste@gmail.com',
-          userid:2,
-          senha:'123',
-          usertype:'Estudante',
-          formacao:'Desenvolvedor'
-        }
-      })
-    }
   }
 
   public navigatingToPublish(){

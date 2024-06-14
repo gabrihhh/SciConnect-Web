@@ -2,22 +2,22 @@
     <div class="notification-card" *ngFor="let item of dataNotification">
         <div class="notification-card-header">
             <app-letter-icon
-                [nome]="item.user.nome"
+                [nome]="item.autor"
                 size="40"
                 fontSize="20"
                 radiusSize="10"
             ></app-letter-icon>
             <div>
-                <button (click)="toPerfil(item.user)">{{ item.user.nome }}</button>
-                <h5>{{ item.data }}</h5>
+                <button (click)="toPerfil(item.autor)">{{ item.autor }}</button>
+                <!-- <h5>{{ item.data }}</h5> -->
             </div>
             <Button class="ellipses-card-notification">
                 <button>Aprovado</button>
                 <button>Reprovado</button>
             </Button>
         </div>
-        <h6>{{item.views}} views</h6>
-        <h5>{{item.titulo}}</h5>
-        <p>{{item.descricao}}</p>
+        <!-- <h6>{{item.views}} views</h6> -->
+        <h5>{{item.nomeDocumento}}</h5>
+        <p>{{item.propostaEstudo}}</p>
     </div>
 </div>

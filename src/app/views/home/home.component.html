@@ -45,25 +45,9 @@
             <router-outlet></router-outlet>
         </div>
         <div class="week">
-            <div class="week-border">
+            <div class="week-border" style="opacity: 0;">
                 <p>Mais lidas da semana:</p>
                 <div>
-                    <div class="week-card" *ngFor="let item of dataWeek">
-                        <div class="week-card-header">
-                            <app-letter-icon
-                                [nome]="item.user.nome"
-                                size="35"
-                                fontSize="20"
-                                radiusSize="10"
-                            ></app-letter-icon>
-                            <div>
-                                <button>{{ item.user.nome }}</button>
-                                <h5>{{ item.data }}</h5>
-                            </div>
-                        </div>
-                        <h5>{{ item.titulo }}</h5>
-                        <h6>{{ item.descricao }}</h6>
-                    </div>
                 </div>
             </div>
         </div>
