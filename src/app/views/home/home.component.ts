@@ -3,6 +3,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject, debounceTime } from 'rxjs';
 import { IPost, IUser } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service'
+import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
 
 @Component({
   selector: 'app-home',

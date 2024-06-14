@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IPost, IUser } from 'src/app/shared/interface/user.interface';
+import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
 
 @Component({
   selector: 'app-timeline',
@@ -13,7 +14,7 @@ export class TimelineComponent implements OnInit {
   public typeofdata: 'artigo'|'perfil' = 'artigo'
   public parametro: string | undefined;
 
-  constructor(private route: ActivatedRoute){}
+  constructor(private route: ActivatedRoute,private requisicoesService: RequisicoesService){}
 
   ngOnInit(): void {
       this.getPosts()
@@ -43,6 +44,7 @@ export class TimelineComponent implements OnInit {
   }
 
   public getPosts(){
+    this.requisicoesService.getPosts()
     this.datasource = []
     switch(this.typeofdata){
       case 'artigo':
