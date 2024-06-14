@@ -43,22 +43,14 @@ export class TimelineComponent implements OnInit {
         }
       })
     }else{
-      switch(this.typeofdata){
-        case 'artigo':
-          this.requisicoesService.getDocumentos().subscribe({
-            next:(res:IResponsePost[])=>{
-              this.dataDocumentos = res
-            },
-            error:(err)=>{
-              console.error(err)
-            }
-          })
-          break
-      }
+      this.typeofdata = 'artigo'
+      this.requisicoesService.getDocumentos().subscribe({
+        next:(res:IResponsePost[])=>{
+          this.dataDocumentos = res
+         },
+      })
     }
-    
   }
-
   public changeType(type:'artigo'|'perfil'){
     this.typeofdata = type;
   }

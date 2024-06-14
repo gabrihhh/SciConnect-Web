@@ -1,7 +1,7 @@
 <div class="timeline-choice" *ngIf="showFiltro">
     <button #artigobtn (click)="changeType('artigo')">Artigo</button>
     <button #perfilbtn (click)="changeType('perfil')">Perfil</button>
-    <button (click)="showFiltro = false" class="fecharFiltro">X</button>
+    <button (click)="showFiltro = false;parametro=undefined;getPosts()" class="fecharFiltro">X</button>
 </div>
 <div class="timeline-page">
     <div *ngIf="typeofdata === 'artigo'" class="timeline">
