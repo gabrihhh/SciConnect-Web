@@ -31,8 +31,12 @@ export class LoginComponent implements AfterViewInit{
 
   public Entrar(){
     if(this.inputLogin.nativeElement.value.trim() !== '' && this.inputSenha.nativeElement.value.trim() !== ''){
-      const user = this.requisicoesService.postLogin(this.inputLogin.nativeElement.value,this.inputSenha.nativeElement.value)
-      this.userService.setUser(user[0])
+      const user:IUser[] = this.requisicoesService.postLogin(this.inputLogin.nativeElement.value,this.inputSenha.nativeElement.value)
+      if(user.length>0){
+        this.userService.setUser(user[0])
+      }else{
+        this.loginError = true
+      }
     }
   }
 
