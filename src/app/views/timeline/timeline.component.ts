@@ -19,11 +19,9 @@ export class TimelineComponent implements OnInit {
   ngOnInit(): void {
       this.getPosts()
       this.route.queryParams.subscribe(params => {
-        this.getPosts()
         this.parametro = params['parametro'];
         this.filterItems();
       });
-
   }
 
   filterItems() {

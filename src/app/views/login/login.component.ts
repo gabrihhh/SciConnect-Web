@@ -34,7 +34,7 @@ export class LoginComponent implements AfterViewInit{
         next:(res: IResponseLogin[]) => {
             if(res.length===1){
               this.userService.setUser(res[0])
-              this.router.navigate(['home'])
+              this.router.navigate(['/home'])
             }
         },
         error:(error) => {
