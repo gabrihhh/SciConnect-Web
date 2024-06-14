@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './views/login/login.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { RequisicoesService } from './shared/services/web/requisicoes.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { RequisicoesService } from './shared/services/web/requisicoes.service';
         BrowserAnimationsModule,
         FormsModule,
         LetterIconModule,
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }
