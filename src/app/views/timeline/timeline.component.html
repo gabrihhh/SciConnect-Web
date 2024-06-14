@@ -4,8 +4,8 @@
     <button (click)="showFiltro = false" class="fecharFiltro">X</button>
 </div>
 <div class="timeline-page">
-    <div *ngFor="let data of dataDocumentos" class="timeline">
-        <div *ngIf="typeofdata === 'artigo'" class="card-timeline">
+    <div *ngIf="typeofdata === 'artigo'" class="timeline">
+        <div *ngFor="let data of dataDocumentos" class="card-timeline">
             <div class="header-post">
                 <app-letter-icon
                 [nome]="data.autor"
@@ -22,8 +22,8 @@
             <p>{{ data.propostaEstudo }}</p>
         </div>
     </div>
-    <div *ngFor="let data of dataUsuarios" class="timeline">
-        <div *ngIf="typeofdata === 'perfil'">
+    <div *ngIf="typeofdata === 'perfil'" class="timeline">
+        <div *ngFor="let data of dataUsuarios">
             <button class="perfil-card">
                 <app-letter-icon
                 [nome]="data.nomeEstudante"
