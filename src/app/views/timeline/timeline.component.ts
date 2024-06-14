@@ -54,7 +54,7 @@ export class TimelineComponent implements OnInit {
     }else{
       switch(this.typeofdata){
         case 'artigo':
-          this.requisicoesService.getPosts().subscribe({
+          this.requisicoesService.getDocumentos().subscribe({
             next:(res:IResponsePost[])=>{
               this.datasource = res
             },

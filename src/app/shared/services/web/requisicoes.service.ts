@@ -13,7 +13,7 @@ export class RequisicoesService {
 
   constructor(private http:HttpClient) { }
 
-  public getPosts(): Observable<IResponsePost[]>{
+  public getDocumentos(): Observable<IResponsePost[]>{
     return this.http.get<IResponsePost[]>(`${environments.endpoint}/v1/home`);
   }
 
@@ -40,5 +40,15 @@ export class RequisicoesService {
 
   public getExplorer(param:string):Observable<{estudante:IEstudante[],documento:IResponsePost[]}>{
     return this.http.get<{estudante:IEstudante[],documento:IResponsePost[]}>(`${environments.endpoint}/v1/home/explorer/${param.toLowerCase()}`)
+  }
+
+  public postDocumento(autor:string,diciplina:string,titulo:string,proposta:string):Observable<IResponsePost>{
+    return this.http.post<IResponsePost>(`${environments.endpoint}/v1/documento`,{
+      autor: autor,
+      areaEstudoDocumento:diciplina,
+      nomeDocumento:titulo,
+      propostaEstudo:proposta,
+      documentoVerificado:"NAO"
+    })
   }
 }

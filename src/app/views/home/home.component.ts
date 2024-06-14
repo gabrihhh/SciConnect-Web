@@ -12,7 +12,7 @@ import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.serv
 })
 export class HomeComponent implements OnInit{
   public dataWeek:any= []
-  public user!:IEstudante;
+  public user:any;
   public inputValue: string = '';
   private inputChangeSubject: Subject<string> = new Subject<string>();
   
