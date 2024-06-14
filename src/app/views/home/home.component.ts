@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject, debounceTime } from 'rxjs';
-import { IPost, IUser } from 'src/app/shared/interface/user.interface';
+import { IEstudante } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service'
 import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
 
@@ -11,8 +11,8 @@ import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.serv
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  public dataWeek:IPost[] = []
-  public user:IUser | null = null
+  public dataWeek:any= []
+  public user!:IEstudante;
   public inputValue: string = '';
   private inputChangeSubject: Subject<string> = new Subject<string>();
   
@@ -72,8 +72,7 @@ export class HomeComponent implements OnInit{
     this.router.navigate(['/login'])
   }
 
-  public toPerfil(user:IUser) {
-
-    this.router.navigate(['profile'], { queryParams: { parametro: JSON.stringify(user) },relativeTo: this.route });
+  public toPerfil(userId:number) {
+    this.router.navigate(['profile'], { queryParams: { parametro: JSON.stringify(userId) },relativeTo: this.route });
   }
 }

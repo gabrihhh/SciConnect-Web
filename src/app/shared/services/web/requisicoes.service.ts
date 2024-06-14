@@ -1,17 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environments } from 'src/environments';
-import { IUser } from '../../interface/user.interface';
+import { IResponseCadastro, IResponseLogin, IResponsePost } from '../../interface/user.interface';
 import { Observable } from 'rxjs';
 
-export interface IResponseLogin{
-  idEstudante: number,
-  documentoEstudante: string;
-  nomeEstudante: string;
-  areaInteresse: string;
-  senhaEstudante: string;
-  ultimoLogin: string;
-}
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +13,8 @@ export class RequisicoesService {
 
   constructor(private http:HttpClient) { }
 
-  public getPosts(){
-    this.http.get(`${environments.endpoint}/v1/home`).subscribe({
-      next:(res)=>{
-        console.log(res)
-      },
-      error:(err)=>{
-        console.log(err)
-      }
-    })
+  public getPosts(): Observable<IResponsePost[]>{
+    return this.http.get<IResponsePost[]>(`${environments.endpoint}/v1/home`);
   }
 
   public postLogin(login: string, senha: string): Observable<IResponseLogin[]> {
@@ -38,4 +24,17 @@ export class RequisicoesService {
     });
   }
 
+  public postCadastro(cpf:string,nome:string,area:string,senha:string,tipo:string,data:string):Observable<IResponseCadastro>{
+    return this.http.post<IResponseCadastro>(
+      `${environments.endpoint}/v1/estudante`,
+      {
+        documentoEstudante:cpf,
+        nomeEstudante:nome,
+        areaInteresse:area,
+        senhaEstudante:senha,
+        tipoUsuario:tipo,
+        ultimoLogin:data
+      }
+    )
+  }
 }

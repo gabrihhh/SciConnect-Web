@@ -9,17 +9,17 @@
     </div>
     <div class="home-content">
         <div class="sidebar">
-            <div class="profile" (click)="toPerfil(user!)">
+            <div class="profile" (click)="toPerfil(user.idEstudante)">
                 <div class="profile-left" >
                     <app-letter-icon
-                    [nome]="user?.nome!"
+                    [nome]="user.nomeEstudante"
                     size="50"
                     fontSize="30"
                 ></app-letter-icon>
                 </div>
                 <div class="profile-right">
-                    <h4>{{user?.nome!}}</h4>
-                    <h6>{{user?.usertype!}}</h6>
+                    <h4>{{user.nomeEstudante}}</h4>
+                    <h6>{{user.tipoUsuario}}</h6>
                 </div>
             </div>
             <div class="nav">
@@ -31,7 +31,7 @@
                     <img src="assets/images/publicar.png">
                     <p>Publicar</p>
                 </Button>
-                <Button *ngIf="user?.usertype === 'Colaborador'" (click)="navigatingToNotification()">
+                <Button *ngIf="user.tipoUsuario === 'colaborador'" (click)="navigatingToNotification()">
                     <img src="assets/images/notificacoes.png">
                     <p>Notificações</p>
                 </Button>

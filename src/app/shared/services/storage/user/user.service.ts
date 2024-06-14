@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IUser } from 'src/app/shared/interface/user.interface';
-import { IResponseLogin } from '../../web/requisicoes.service';
+import { IResponseLogin } from 'src/app/shared/interface/user.interface';
+
 
 
 @Injectable({

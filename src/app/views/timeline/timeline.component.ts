@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPost, IUser } from 'src/app/shared/interface/user.interface';
+import { IResponsePost } from 'src/app/shared/interface/user.interface';
 import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
 
 @Component({
@@ -30,12 +30,12 @@ export class TimelineComponent implements OnInit {
     if (this.parametro){
       switch(type){
         case 'artigo':
-          this.datasource = this.datasource.filter((item:IPost) => 
+          this.datasource = this.datasource.filter((item:IResponsePost) => 
             item.nomeDocumento.toLowerCase().includes(this.parametro!.toLowerCase())
           );
           break
         case 'perfil':
-          this.datasource = this.datasource.filter((item:IUser) => 
+          this.datasource = this.datasource.filter((item:any) => 
             item.nome.toLowerCase().includes(this.parametro!.toLowerCase())
           );
           break
@@ -44,10 +44,17 @@ export class TimelineComponent implements OnInit {
   }
 
   public getPosts(){
-    this.requisicoesService.getPosts()
     this.datasource = []
     switch(this.typeofdata){
       case 'artigo':
+        this.requisicoesService.getPosts().subscribe({
+          next:(res:IResponsePost[])=>{
+            this.datasource = res
+          },
+          error:(err)=>{
+            console.error(err)
+          }
+        })
         break
       case 'perfil':
         break
@@ -59,7 +66,7 @@ export class TimelineComponent implements OnInit {
     this.getPosts()
   }
 
-  public toPerfil(user:IUser){
-    console.log(user)
+  public toPerfil(userId:number){
+    console.log(userId)
   }
 }
