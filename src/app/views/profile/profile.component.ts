@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPost, IUser } from 'src/app/shared/interface/user.interface';
 
 interface IUserPost {
   titulo:'teste teste',
@@ -14,10 +13,10 @@ interface IUserPost {
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit{
-  public user:IUser | undefined; 
+  public user:any 
   public seguidores:number = 1234;
   public seguindo:number = 4321;
-  public postsOfUser:IPost[] = [] 
+  public postsOfUser:any = [] 
   
   constructor(private route: ActivatedRoute){}
 

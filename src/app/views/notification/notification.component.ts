@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IPost, IUser } from 'src/app/shared/interface/user.interface';
 
 @Component({
   selector: 'app-notification',
@@ -7,7 +6,7 @@ import { IPost, IUser } from 'src/app/shared/interface/user.interface';
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent implements OnInit{
-  public dataNotification:IPost[] = []
+  public dataNotification:any[] = []
 
   ngOnInit(): void {
       this.getNotification();
