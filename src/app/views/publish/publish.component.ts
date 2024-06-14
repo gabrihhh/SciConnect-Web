@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IEstudante, IResponseLogin } from 'src/app/shared/interface/user.interface';
 import { UserService } from 'src/app/shared/services/storage/user/user.service';
 import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.service';
@@ -16,7 +16,7 @@ export class PublishComponent{
 
   public user:any;
 
-  constructor(private requisicoesService:RequisicoesService,private userService:UserService,private router:Router){
+  constructor(private requisicoesService:RequisicoesService,private userService:UserService,private router:Router,private route: ActivatedRoute,){
     this.user = JSON.parse(this.userService.getUser()!);
 
     if(!this.user){
@@ -34,7 +34,7 @@ export class PublishComponent{
         this.inputTexto.nativeElement.value.trim()
       ).subscribe({
         next:(res)=>{
-          this.router.navigate(['timeline'])
+          this.router.navigate(['timeline'],{ relativeTo: this.route });
         },
       })
     }

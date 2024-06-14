@@ -12,7 +12,6 @@ export class RegisterComponent implements AfterViewInit{
   @ViewChild('inputNome') inputNome!: ElementRef
   @ViewChild('inputCpf') inputCpf!: ElementRef
   @ViewChild('inputTipo') inputTipo!: ElementRef
-  @ViewChild('inputEmail') inputEmail!: ElementRef
   @ViewChild('inputSenha') inputSenha!: ElementRef
   @ViewChild('inputSenhaNovamente') inputSenhaNovamente!: ElementRef
   @ViewChild('btnEstudante') btnEstudante!: ElementRef
@@ -89,10 +88,6 @@ export class RegisterComponent implements AfterViewInit{
     }
 
     if(this.inputArea.nativeElement.value.trim() === ''){
-      return false
-    }
-
-    if(this.inputEmail.nativeElement.value.trim() === ''){
       return false
     }
 

@@ -14,7 +14,7 @@
                 radiusSize="10"
                 ></app-letter-icon>
                 <div>
-                    <button (click)="toPerfil(data.autor)">{{ data.autor }}</button>
+                    <button>{{ data.autor }}</button>
                     <!-- <h6>{{ data.data }}</h6> -->
                 </div>
             </div>
@@ -24,7 +24,7 @@
     </div>
     <div *ngFor="let data of dataUsuarios" class="timeline">
         <div *ngIf="typeofdata === 'perfil'">
-            <button class="perfil-card" (click)="toPerfil(data.idEstudante)">
+            <button class="perfil-card">
                 <app-letter-icon
                 [nome]="data.nomeEstudante"
                 size="40"

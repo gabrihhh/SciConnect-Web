@@ -22,13 +22,13 @@ export class TimelineComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.parametro = params['parametro'];
         this.filterItems();
-        this.showFiltro = true
       });
   }
 
   filterItems() {
     if (this.parametro){
       this.getPosts(this.parametro)
+      this.showFiltro = true
     }
   }
 
@@ -62,9 +62,5 @@ export class TimelineComponent implements OnInit {
   public changeType(type:'artigo'|'perfil'){
     this.typeofdata = type;
     this.getPosts()
-  }
-
-  public toPerfil(userId:number){
-    console.log(userId)
   }
 }

@@ -11,7 +11,6 @@ import { PublishComponent } from './views/publish/publish.component';
 import { LetterIconModule } from "./shared/components/letter-icon/letter-icon.module";
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './views/login/login.component';
-import { ProfileComponent } from './views/profile/profile.component';
 import { RequisicoesService } from './shared/services/web/requisicoes.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -23,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
         TimelineComponent,
         PublishComponent,
         LoginComponent,
-        ProfileComponent
     ],
     providers: [RequisicoesService],
     bootstrap: [AppComponent],

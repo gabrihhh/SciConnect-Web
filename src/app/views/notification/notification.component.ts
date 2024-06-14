@@ -31,8 +31,4 @@ export class NotificationComponent implements OnInit{
       }
     })
   }
-
-  public toPerfil(userId:string){
-    console.log(userId)
-  }
 }

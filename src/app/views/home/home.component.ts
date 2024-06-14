@@ -70,8 +70,4 @@ export class HomeComponent implements OnInit{
     this.userService.clearLocarStorage()
     this.router.navigate(['/login'])
   }
-
-  public toPerfil(userId:number) {
-    this.router.navigate(['profile'], { queryParams: { parametro: JSON.stringify(userId) },relativeTo: this.route });
-  }
 }
