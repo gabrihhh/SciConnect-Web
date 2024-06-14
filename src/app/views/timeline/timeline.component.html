@@ -1,9 +1,10 @@
-<div class="timeline-choice">
+<div class="timeline-choice" *ngIf="showFiltro">
     <button #artigobtn (click)="changeType('artigo')">Artigo</button>
     <button #perfilbtn (click)="changeType('perfil')">Perfil</button>
+    <button (click)="showFiltro = false" class="fecharFiltro">X</button>
 </div>
 <div class="timeline-page">
-    <div *ngFor="let data of datasource" class="timeline">
+    <div *ngFor="let data of dataDocumentos" class="timeline">
         <div *ngIf="typeofdata === 'artigo'" class="card-timeline">
             <div class="header-post">
                 <app-letter-icon
@@ -20,6 +21,8 @@
             <h3>{{ data.nomeDocumento }}</h3>
             <p>{{ data.propostaEstudo }}</p>
         </div>
+    </div>
+    <div *ngFor="let data of dataUsuarios" class="timeline">
         <div *ngIf="typeofdata === 'perfil'">
             <button class="perfil-card" (click)="toPerfil(data.idEstudante)">
                 <app-letter-icon

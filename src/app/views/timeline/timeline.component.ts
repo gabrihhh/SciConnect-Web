@@ -10,10 +10,11 @@ import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.serv
 })
 
 export class TimelineComponent implements OnInit {
-  public datasource: any = [];
+  public dataDocumentos: any = [];
+  public dataUsuarios: any = [];
   public typeofdata: 'artigo'|'perfil' = 'artigo'
   public parametro: string | undefined;
-
+  public showFiltro:Boolean = false;
   constructor(private route: ActivatedRoute,private requisicoesService: RequisicoesService){}
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class TimelineComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.parametro = params['parametro'];
         this.filterItems();
+        this.showFiltro = true
       });
   }
 
@@ -31,30 +33,21 @@ export class TimelineComponent implements OnInit {
   }
 
   public getPosts(params?:string){
-    this.datasource = []
+    this.dataDocumentos = []
+    this.dataUsuarios = []
     if(params){
-      switch(this.typeofdata){
-        case 'artigo':
-          this.requisicoesService.getExplorer(params).subscribe({
-            next:(res)=>{
-              this.datasource = res.documento
-            }
-          })
-          break
-        case 'perfil':
-          this.requisicoesService.getExplorer(params).subscribe({
-            next:(res)=>{
-              this.datasource = res.estudante
-            }
-          })
-          break
-      }
+      this.requisicoesService.getExplorer(params).subscribe({
+        next:(res)=>{
+          this.dataDocumentos = res.documento
+          this.dataUsuarios = res.estudante
+        }
+      })
     }else{
       switch(this.typeofdata){
         case 'artigo':
           this.requisicoesService.getDocumentos().subscribe({
             next:(res:IResponsePost[])=>{
-              this.datasource = res
+              this.dataDocumentos = res
             },
             error:(err)=>{
               console.error(err)
