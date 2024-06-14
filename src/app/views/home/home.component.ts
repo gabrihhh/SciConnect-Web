@@ -25,9 +25,6 @@ export class HomeComponent implements OnInit{
       .pipe(debounceTime(1000))
       .subscribe((value) => {
         this.navigateToTTimelineWithParams(value);
-        setTimeout(() => {
-          this.inputValue = '';
-        }, 0);
       });
 
     this.user = JSON.parse(this.userService.getUser()!);
