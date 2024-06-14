@@ -23,8 +23,7 @@
         </div>
     </div>
     <div *ngIf="typeofdata === 'perfil'" class="timeline">
-        <div *ngFor="let data of dataUsuarios">
-            <button class="perfil-card">
+        <div *ngFor="let data of dataUsuarios" class="perfil-card">
                 <app-letter-icon
                 [nome]="data.nomeEstudante"
                 size="40"
@@ -32,7 +31,6 @@
                 radiusSize="10"
                 ></app-letter-icon>
                 <h5>{{ data.nomeEstudante }}</h5>
-            </button>
         </div>
     </div>
 </div>
