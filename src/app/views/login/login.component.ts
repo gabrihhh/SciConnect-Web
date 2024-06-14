@@ -11,7 +11,7 @@ import { RequisicoesService } from 'src/app/shared/services/web/requisicoes.serv
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements AfterViewInit{
+export class LoginComponent{
   @ViewChild('inputLogin') inputLogin!: ElementRef
   @ViewChild('inputSenha') inputSenha!: ElementRef
 
@@ -19,14 +19,6 @@ export class LoginComponent implements AfterViewInit{
 
   constructor(private userService:UserService,private router:Router,private requisicoesService:RequisicoesService){}
 
-
-  ngAfterViewInit(): void {
-      document.addEventListener('keydown',(e)=>{
-        if(e.code == 'Enter'){
-          this.Entrar()
-        }
-      })
-  }
 
   public Entrar(){
     if(this.inputLogin.nativeElement.value.trim() !== '' && this.inputSenha.nativeElement.value.trim() !== ''){
